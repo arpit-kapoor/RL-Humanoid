@@ -34,8 +34,10 @@ System Setup -
 	-) Squaternion
 	-) OpenAI Gym
 
+Extract Builds.rar from [here](https://drive.google.com/file/d/1qSRSU-h1TGCtWEeZc_R7P6xybK-40CRA/view?usp=sharing) into the Scripts directory
+
 Execution - 
-1) Go to Codes/Builds/MazeHumanoid folder.
+1) Go to Scripts/Builds/MazeHumanoid folder.
 2) Run ./MazeHumanoid.x86_64 in a terminal. Ensure it has execute permission.
 3) Unity Window will open. Select Resolution and Quality.
 4) Finally Unity Environment will start with a humanoid and a maze.
