@@ -1,16 +1,11 @@
 
 # Heirarchical Deep Reinforcement Learning for Humanoid
-15CS496L MAJOR PROJECT
-CSE Dept. May 2019
+
+### 15CS496L MAJOR PROJECT <br>
+CSE Dept. May 2019 <br>
 ProjectID CSE532744
 
-Submitted By
-
-Abhishek Warrier
-Arpit Kapoor
-
-Guide - Dr. T Sujithra, Assistant Professor (CSE)
-
+Guide - Dr. T Sujithra, Assistant Professor (CSE Dept, SRM Institute of Science and Technology, Chennai)
 
 ## Contents
 1. Videos folder contains the final implementation video.
@@ -20,9 +15,9 @@ Guide - Dr. T Sujithra, Assistant Professor (CSE)
 
 ## Code Instructions
 ### System Requirements - 
-OS: Ubuntu 16.04/18.04
-RAM: 8GB
-GPU above GTX950 is preferred
+ - OS: Ubuntu 16.04/18.04
+ - RAM: 8GB
+ - GPU above GTX950 is preferred
 
 ### System Setup - 
 1. Install Anaconda Python 3.6
