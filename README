@@ -1,0 +1,47 @@
+15CS496L MAJOR PROJECT
+CSE Dept. May 2019
+ProjectID CSE532744
+
+Submitted By
+
+Abhishek Warrier RA1511003010532
+Arpit Kapoor RA1511003010744
+
+Guide - Dr. T Sujithra, Assistant Professor (CSE)
+
+
+Contents - 
+1) Videos folder contains the final implementation video.
+2) Report folder contains the final report pdf, latex source and final review ppt
+3) Codes folder contains required scripts to run the code
+
+
+Code Instructions
+-----------------
+
+System Requirements - 
+OS: Ubuntu 16.04/18.04
+RAM: 8GB
+GPU above GTX950 is preferred
+
+System Setup - 
+1) Install Anaconda Python 3.6
+2) Create new conda env named "rl"
+3) In this conda env, install the following python libraries -
+	-) Numpy
+	-) Tensorflow
+	-) Roboschool
+	-) Squaternion
+	-) OpenAI Gym
+
+Execution - 
+1) Go to Codes/Builds/MazeHumanoid folder.
+2) Run ./MazeHumanoid.x86_64 in a terminal. Ensure it has execute permission.
+3) Unity Window will open. Select Resolution and Quality.
+4) Finally Unity Environment will start with a humanoid and a maze.
+5) Open another terminal and go to Codes Folder.
+5) Activate Conda Environment
+6) Run "python humanoid.py"
+7) The humanoid will attempt to solve the maze
+
+

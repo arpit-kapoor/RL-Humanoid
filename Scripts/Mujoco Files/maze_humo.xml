@@ -1,0 +1,74 @@
+<mujoco model="plane">
+   <compiler angle="degree" inertiafromgeom="true" meshdir="meshes/" />
+   <size nconmax="100" njmax="500" nstack="-1" />
+
+   <option timestep="0.002">
+		<flag warmstart="enable" />
+	</option>
+
+	<visual>
+		<quality shadowsize="4096" />
+	</visual>
+
+   
+   <default>
+		<geom material="geom" type="box"/>
+   </default>
+
+   <asset>		
+		<texture builtin="gradient" height="100" rgb1="1 1 1" rgb2="0 0 0" type="skybox" width="100" />
+		<texture builtin="checker" height="500" mark="edge" markrgb=".1 .1 .1" name="groundplane" rgb1=".7 .7 .75" rgb2=".9 .9 .95" type="2d" width="500" />
+
+		<material name="MatPlastic" reflectance="0.5" rgba=".4 .41 .4 1" shininess=".6" specular=".8" />
+		<material name="MatBlue" reflectance="0.1" rgba=".2 .6 1 1" shininess=".6" specular=".8" />
+		<material name="MatFrame" reflectance="0.5" rgba=".21 .2 .2 1" shininess=".1" specular="1.2" />
+		<material name="MatGnd" reflectance="0.1" shininess=".01" specular=".5" texrepeat="7.5 7.5" texture="groundplane" />
+		<texture type="skybox" builtin="gradient" width="100" height="100" rgb1=".4 .6 .8" 
+            rgb2="0 0 0"/>  
+        <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="1278" 
+            rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01"/>  
+        <texture name="texplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" 
+            width="100" height="100"/>  
+
+        <material name='MatPlane' reflectance='0.5' texture="texplane" texrepeat="1 1" texuniform="true"/>
+        <material name='geom' texture="texgeom" texuniform="true"/>
+   </asset>
+   	
+	
+    <worldbody>
+		<include file="humo.xml"/>
+		<geom material="MatGnd" name="ground" pos="0 0 0" size="30 30 30" type="plane" />
+    <geom pos="10.0 0 1.0" rgba="0.2 0.6 1 1" size="10.0 0.05 1.0" type="box" material="MatBlue"/><geom pos="10.0 -20.0 1.0" rgba="0.2 0.6 1 1" size="10.0 0.05 1.0" type="box" material="MatBlue"/><geom euler="0 0 90" pos="0 -10.0 1.0" rgba="0.2 0.6 1 1" size="10.0 0.05 1.0" type="box" material="MatBlue"/><geom euler="0 0 90" pos="20.0 -10.0 1.0" rgba="0.2 0.6 1 1" size="10.0 0.05 1.0" type="box" material="MatBlue"/><geom pos="2.0 -4.0 1.0" rgba="0.2 0.6 1 1" size="2.0 0.05 1.0" type="box" material="MatBlue"/><geom euler="0 0 90" pos="4.0 -6.0 1.0" rgba="0.2 0.6 1 1" size="2.0 0.05 1.0" type="box" material="MatBlue"/><geom pos="4.0 -12.0 1.0" rgba="0.2 0.6 1 1" size="4.0 0.05 1.0" type="box" material="MatBlue"/><geom euler="0 0 90" pos="4.0 -18.0 1.0" rgba="0.2 0.6 1 1" size="2.0 0.05 1.0" type="box" material="MatBlue"/><geom euler="0 0 90" pos="8.0 -10.0 1.0" rgba="0.2 0.6 1 1" size="6.0 0.05 1.0" type="box" material="MatBlue"/><geom euler="0 0 90" pos="12.0 -8.0 1.0" rgba="0.2 0.6 1 1" size="8.0 0.05 1.0" type="box" material="MatBlue"/><geom pos="14.0 -4.0 1.0" rgba="0.2 0.6 1 1" size="2.0 0.05 1.0" type="box" material="MatBlue"/><geom euler="0 0 90" pos="16.0 -14.0 1.0" rgba="0.2 0.6 1 1" size="6.0 0.05 1.0" type="box" material="MatBlue"/>
+	</worldbody>
+   
+       <tendon>
+        <fixed name="left_hipknee">
+            <joint coef="-1" joint="left_hip_y"/>
+            <joint coef="1" joint="left_knee"/>
+        </fixed>
+        <fixed name="right_hipknee">
+            <joint coef="-1" joint="right_hip_y"/>
+            <joint coef="1" joint="right_knee"/>
+        </fixed>
+    </tendon>
+    <actuator><!-- this section is not supported, same constants in code -->
+        <motor gear="100" joint="abdomen_y" name="abdomen_y"/>
+        <motor gear="100" joint="abdomen_z" name="abdomen_z"/>
+        <motor gear="100" joint="abdomen_x" name="abdomen_x"/>
+        <motor gear="100" joint="right_hip_x" name="right_hip_x"/>
+        <motor gear="100" joint="right_hip_z" name="right_hip_z"/>
+        <motor gear="300" joint="right_hip_y" name="right_hip_y"/>
+        <motor gear="200" joint="right_knee" name="right_knee"/>
+        <motor gear="100" joint="left_hip_x" name="left_hip_x"/>
+        <motor gear="100" joint="left_hip_z" name="left_hip_z"/>
+        <motor gear="300" joint="left_hip_y" name="left_hip_y"/>
+        <motor gear="200" joint="left_knee" name="left_knee"/>
+        <motor gear="25" joint="right_shoulder1" name="right_shoulder1"/>
+        <motor gear="25" joint="right_shoulder2" name="right_shoulder2"/>
+        <motor gear="25" joint="right_elbow" name="right_elbow"/>
+        <motor gear="25" joint="left_shoulder1" name="left_shoulder1"/>
+        <motor gear="25" joint="left_shoulder2" name="left_shoulder2"/>
+        <motor gear="25" joint="left_elbow" name="left_elbow"/>
+    </actuator>
+	
+</mujoco>
