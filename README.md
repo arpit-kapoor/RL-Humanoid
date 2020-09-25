@@ -1,5 +1,7 @@
 
-# Heirarchical Deep Reinforcement Learning for Humanoid
+# RL Humanoid Maze Solver
+
+Demo Video [here](https://drive.google.com/file/d/1R7KlKXhLdm0ZP_DaYa8dCx3IvxafaMwd/view?usp=sharing)
 
 ### 15CS496L MAJOR PROJECT <br>
 CSE Dept. May 2019 <br>
